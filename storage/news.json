@@ -1,0 +1,88 @@
+{
+    "1": {
+        "id": 1,
+        "title": "News 1",
+        "text": "We have good news 1",
+        "isPrivate": false,
+        "image": null,
+        "category": 1
+    },
+    "2": {
+        "id": 2,
+        "title": "News 2",
+        "text": "We have bad news 2",
+        "isPrivate": true,
+        "image": null,
+        "category": 1
+    },
+    "3": {
+        "id": 1,
+        "title": "News 3",
+        "text": "We have good news 3",
+        "isPrivate": false,
+        "category": 2
+    },
+    "4": {
+        "id": 2,
+        "title": "News 4",
+        "text": "We have bad news 4",
+        "isPrivate": true,
+        "image": null,
+        "category": 2
+    },
+    "5": {
+        "title": "Oxford colleges",
+        "text": "Most colleges are build around an open  rectangular space like a courtyard which is often referred as a quad. The quad is one of the first spaces you enter when you walk throuth the porter's lodge and home to the original college buildings - but some of the modern colleges have recreated this. Quads are often named after famous former students. The quad is often a peacefull space in contrast to the hustle and bustle of the city outside.",
+        "isPrivate": false,
+        "category": "2",
+        "id": 5
+    },
+    "6": {
+        "title": "7",
+        "text": "7777777777777",
+        "isPrivate": false,
+        "category": "2",
+        "image": null,
+        "id": 6
+    },
+    "7": {
+        "title": "Oxford colleges",
+        "text": "Most colleges are build around an open  rectangular space like a courtyard which is often referred as a quad. The quad is one of the first spaces you enter when you walk throuth the porter's lodge and home to the original college buildings - but some of the modern colleges have recreated this. Quads are often named after famous former students. The quad is often a peacefull space in contrast to the hustle and bustle of the city outside.",
+        "isPrivate": true,
+        "category": "2",
+        "image": "\/storage\/images\/s4AES4hFH4KsJyg6UnFkfzLa3kmyDqQM26yzf7vs.jpg",
+        "id": 7
+    },
+    "8": {
+        "title": "10",
+        "text": "10",
+        "isPrivate": true,
+        "category": "1",
+        "image": "\/storage\/images\/0VPIztzNjpc2nleyrrG0TrXFfyvNyEjbQI7QMtJX.jpg",
+        "id": 8
+    },
+    "9": {
+        "title": "11",
+        "text": "111111111111111111111111111111",
+        "isPrivate": false,
+        "category": "2",
+        "image": "\/storage\/images\/sLpFC72kLNMXPxMkizNB5RL0X3kFmx2WDd9ezTbx.jpg",
+        "id": 9
+    },
+    "10": {
+        "title": "12",
+        "text": "1212",
+        "isPrivate": false,
+        "category": "1",
+        "image": "\/storage\/images\/zPg19wXanXCgnYvRf3Qw4jtEygvR3QvNoZlTS5pq.jpg",
+        "id": 10
+    },
+    "11": {
+        "title": "000",
+        "text": "000",
+        "isPrivate": false,
+        "category": "1",
+        "image": null,
+        "id": 11
+    }
+}
