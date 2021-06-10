@@ -14,5 +14,5 @@
     <a class="nav-link" {{ request()->routeIs('admin.news.index') ?'active':''}} href="{{route('admin.news.index')}}">AdminBorder</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" {{ request()->routeIs('vue') ?'active':''}} href="{{route('vue')}}">VUE Demo</a>
+    <a class="nav-link" href="{{route('vklogin')}}">VK login</a>
 </li>

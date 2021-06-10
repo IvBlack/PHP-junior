@@ -46,7 +46,12 @@ Route::group([
 
 Route::match(['post', 'get'], '/profile', 'ProfileController@update')->name('updateProfile');
 
-//
+//routes for work with vkAPI
+Route::get('/auth/vk', 'LogSocController@loginVK')->name('vklogin');
+Route::get('/auth/vk/response', 'LogSocController@responseVK')->name('vkResponse');
+
+
+//wrapped news and categories
 Route::group([
     'prefix' => 'news',
     'as' => 'news.'
