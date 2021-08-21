@@ -17,6 +17,10 @@
 
 Route::get('/', 'HomeController@index')->name('Home');
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'is_admin', 'auth'], function() {
+    \Unisharp\LaravelFilemanager\Lfm::routes();
+}]);
+
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
