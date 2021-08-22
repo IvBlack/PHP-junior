@@ -17,9 +17,9 @@
 
 Route::get('/', 'HomeController@index')->name('Home');
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'is_admin', 'auth'], function() {
+/*Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'is_admin', 'auth'], function() {
     \Unisharp\LaravelFilemanager\Lfm::routes();
-}]);
+}]);*/
 
 Route::group([
     'prefix' => 'admin',
@@ -64,7 +64,7 @@ Route::group([
     Route::get('/one/{news}', 'NewsController@show')->name('show');
 
     Route::group([
-        'as' => 'category.'
+        'as' => 'category.',
     ], function () {
 Route::get('/categories', 'CategoryController@index')->name('index');
 Route::get('/category/{name}', 'CategoryController@show')->name('show');

@@ -17,8 +17,9 @@ class XMLParserService
         'image' => ['uses' => 'channel.image.url'],
         'news' => ['uses' => 'channel.item[guid,title, link,description,pubDate,enclosure::url,category]'],
     ]);
+    dump($data);
 
-        foreach ($data['news'] as $news) {
+        /*foreach ($data['news'] as $news) {
             if($news['category']) {
                 $category = Category::query()->firstOrCreate([
                     'name' => $news['category'],
@@ -33,7 +34,7 @@ class XMLParserService
                     'category_id' => $category->id,
                 ]);
             }
-        }
+        }*/
         return redirect()->route('news.category.index');
     }
 }
