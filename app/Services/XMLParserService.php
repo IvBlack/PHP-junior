@@ -3,13 +3,14 @@
 namespace App\Services;
 use App\Category;
 use App\News;
+use Orchestra\Parser\Xml\Facade as XmlParser;
+use Illuminate\Support\Str;
 
 
 class XMLParserService
 {
     public function saveNews($link) {
-        $xml = XmlParser::load('https://news.yandex.ru/sport.rss');
-        dump($xml);
+        $xml = XmlParser::load($link);
         $data = $xml->parse([
         'title' => ['uses' => 'channel.title'],
         'link' => ['uses' => 'channel.link'],
@@ -34,7 +35,7 @@ class XMLParserService
                     'category_id' => $category->id,
                 ]);
             }
-        }*/
-        return redirect()->route('news.category.index');
+        }
+        return redirect()->route('news.category.index');*/
     }
 }

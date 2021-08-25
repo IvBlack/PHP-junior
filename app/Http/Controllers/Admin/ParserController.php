@@ -38,5 +38,6 @@ class ParserController extends Controller
         }
         return $start . '---' . date('c');
         //return redirect()->route('news.category.index');
+        //return redirect()->route('admin.index');
     }
 }
