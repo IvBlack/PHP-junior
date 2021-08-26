@@ -39,17 +39,11 @@ class NewsController extends Controller
 
     //функция апдейтит текущую новость тем, что ввел юзер через $request
     public function update (Request $request, News $news) {
-        $name = null;
-        if($request->file('image')) {
-            $path = \Storage::putFile('public/images', $request->file('image'));
-            $name = \Storage::url($path);
-        }
-
-        //заполняем наш экземпляр данными из request от юзера и передаем методу save
-        //кот. сам решит - insert или update
-        $news->image = $name;
         $this->validate($request, News::rules(), [], News::attrNames());
-        $result = $news->fill($request->all())->save();
+        $data = request()->all();
+        $data['image'] = $this->saveImage($request);
+
+        $result = $news->fill($data)->save();
         if($result) {
             return redirect()->route('news.show', $news->id)->with('success', 'New has been changed!');
         }
@@ -65,25 +59,12 @@ class NewsController extends Controller
     }
 
     public function store(Request $request) {
-        //экземпляр класса нашей модели со всеми полями
-        $news = new News();
-            //если прилетает картинка из формы - сохраняем в папку 'public/images'
-            $name = null;
-            if($request->file('image')) {
-                $path = \Storage::putFile('public/images', $request->file('image'));
-                //возвращаем настоящий путь
-                $name = \Storage::url($path);
-            }
-
-            //заполняем наш экземпляр данными из request от юзера и передаем методу save
-            //кот. сам решит - insert или update
-            $news->image = $name;
-
-            //вызовем функцию validate и отправим ей наши данные от юзера
+            $news = new News();
             $this->validate($request, News::rules(), [], News::attrNames());
-            $result = $news->fill($request->all())->save();
+            $data = request()->all();
+            $data['image'] = $this->saveImage($request);
 
-            //если заполнение данными от юзера успешно, то ок
+            $result = $news->fill($data)->save();
             if($result) {
                 return redirect()->route('news.show', $news->id)->with('success', 'New has been added!');
             }
