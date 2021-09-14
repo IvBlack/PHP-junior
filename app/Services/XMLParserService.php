@@ -13,10 +13,12 @@ use Laravie\Parser\Xml\Document;
 class XMLParserService
 {
     public function saveNews($rssLink) {
-        //$rss = 'https:://news.yandex.ru/martial_arts.rss';
-        $xml = @simplexml_load_file($rssLink);
-        if($xml===false)die('Error connect to RSS, try again.');
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $rssLink);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $xmlresponse = curl_exec($ch);
+        $xml=simplexml_load_string($xmlresponse);
 
         foreach($xml->xpath('//item') as $item){
             echo '<pre>';
@@ -26,6 +28,27 @@ class XMLParserService
             echo ''.$item->link.'';
             echo '</pre>';
         }
+
+        /*for($i = 0; $i < 20; $i++) {
+            $title = $xml->channel->item[$i]->title;
+            $link = $xml->channel->item[$i]->link;
+            $desc = $xml->channel->item[$i]->description;
+            $html .="<div><h3>$title</h3>$link<br />$desc</div><hr>";
+            }
+            echo $html;*/
+
+        /*
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https:://news.yandex.ru/auto.rss');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $output = curl_exec($ch);
+
+        curl_close($ch);
+
+        $xml = simplexml_load_string($output);*/
+        //$xml = simplexml_load_file();
+        //if($xml===false)die('Error connect to RSS, try again.');
+
 
         /*$xmlstr = @file_get_contents($link);
         if($xmlstr===false)die('Error connect to URL: '.$xmlstr);
