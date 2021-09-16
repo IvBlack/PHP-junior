@@ -12,22 +12,31 @@ use Laravie\Parser\Xml\Document;
 
 class XMLParserService
 {
-    public function saveNews($rssLink) {
+    public function saveNews($link) {
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $rssLink);
+        curl_setopt($ch, CURLOPT_URL, $link);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $xmlresponse = curl_exec($ch);
-        $xml=simplexml_load_string($xmlresponse);
 
-        foreach($xml->xpath('//item') as $item){
+        if($xmlresponse === false)
+        {
+            echo 'Curl mistake is: ' . curl_error($ch). '</br>';
+        } else{echo 'Commited without mistakes';}
+
+        curl_close($ch);
+        //$xml=simplexml_load_string($xmlresponse);
+        //print_r($xml);
+
+
+        /*foreach($xml->xpath('//item') as $item){
             echo '<pre>';
             echo ''.$item->title.'('.$item->pubDate.')';
             echo '</br>';
             echo ''.$item->description.'';
             echo ''.$item->link.'';
             echo '</pre>';
-        }
+        }*/
 
         /*for($i = 0; $i < 20; $i++) {
             $title = $xml->channel->item[$i]->title;
