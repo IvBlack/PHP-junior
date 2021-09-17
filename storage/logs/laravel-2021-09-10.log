@@ -1,0 +1,10 @@
+[2021-09-10 21:13:11] local.ERROR: There are no commands defined in the "clear" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"clear\" namespace. at C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\vendor\\symfony\\console\\Application.php:604)
+[stacktrace]
+#0 C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\vendor\\symfony\\console\\Application.php(657): Symfony\\Component\\Console\\Application->findNamespace('clear')
+#1 C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\vendor\\symfony\\console\\Application.php(237): Symfony\\Component\\Console\\Application->find('clear:cache')
+#2 C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\vendor\\symfony\\console\\Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\Пользователь\\Documents\\GitHub\\PHP-junior\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
