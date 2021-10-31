@@ -11,9 +11,8 @@ use App\Jobs\NewsParsing;
 class ParserController extends Controller
 {
     public function index(XMLParserService $parserService) {
-        //$start = date('c');
+        $start = date('c');
         $rssLinks = [
-            'https://lenta.ru/rubrics/sport.rss',
             'https:://news.yandex.ru/auto.rss',
             'https:://news.yandex.ru/auto_racing.rss',
             'https:://news.yandex.ru/army.rss',
@@ -38,7 +37,7 @@ class ParserController extends Controller
             $parserService->saveNews($rssLink);
             //NewsParsing::dispatch($rssLink);
         }
-        //return $start . '---' . date('c');
+        return $start . '---' . date('c');
         //return redirect()->route('news.category.index');
         //return redirect()->route('admin.index');
     }

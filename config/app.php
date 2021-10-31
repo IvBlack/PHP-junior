@@ -166,7 +166,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Nathanmac\Utilities\Parser\ParserServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -197,6 +199,7 @@ return [
     'aliases' => [
 
         'XmlParser' => Orchestra\Parser\Xml\Facade::class,
+        'Parser' => Nathanmac\Utilities\Parser\Facades\Parser::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
