@@ -8,13 +8,13 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2.5",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "6.18.7",
-        "laravel/tinker": "^1.0",
+        "laravel/framework": "^7.0",
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "2.0",
         "laravie/parser": "^2.0",
-        "nathanmac/parser": "^4.3",
-        "orchestra/parser": "4.0",
+        "orchestra/parser": "^5.0",
         "predis/predis": "^1.1",
         "socialiteproviders/vkontakte": "^4.2",
         "unisharp/laravel-filemanager": "^2.2"
@@ -25,8 +25,8 @@
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^3.0",
-        "phpunit/phpunit": "^7.5"
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^8.5"
     },
     "config": {
         "optimize-autoloader": true,
