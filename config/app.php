@@ -166,7 +166,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Nathanmac\Utilities\Parser\ParserServiceProvider::class,
+        //Nathanmac\Utilities\Parser\ParserServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
 
