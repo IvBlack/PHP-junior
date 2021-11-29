@@ -91,3 +91,26 @@ function test_local2() {
 }
 
 test_local2();
+
+//__________________________________________________________________________
+/*
+    But note that you declare a var in a function,
+    then set it as a global in that function, its value will not be retained
+    outside of this function. Look at this:
+*/
+
+foo();
+echo $a; // echoes nothing
+
+bar();
+echo $b; // echoes "b"
+
+function foo() {
+    $a = "a";
+    global $a;
+}
+
+function bar() {
+    global $b;
+    $b = "b";
+}
