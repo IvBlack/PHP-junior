@@ -1,2 +1,4 @@
-# PHP-junior
-Works on php
+# Custom URL-shortener.
+
+Open the main page and just click on 'Short the URL!' button.
+
