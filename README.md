@@ -1,7 +1,4 @@
-# Сервис по сокращению ссылок.
-Реализация тестового задания, развернутая на localhost.
-Подключение к БД - db.php
-Конфиг Apache для ЧПУ ссылок - .htaccess
-Реализовано с и без Ajax.
-Валидация на стороне клиента.
+# Custom URL-shortener.
+
+Open the main page and just click on 'Short the URL!' button.
 
