@@ -16,6 +16,33 @@ class XMLParserService
 {
     public function saveNews($link) {
 
+        $xml = XmlParser::load($link);
+        $data = $xml->parse([
+        'title' => ['uses' => 'channel.title'],
+        'link' => ['uses' => 'channel.link'],
+        'description' => ['uses' => 'channel.description'],
+        'image' => ['uses' => 'channel.image.url'],
+        'news' => ['uses' => 'channel.item[guid,title,link,description,pubDate,enclosure::url,category]'],
+    ]);
+
+        foreach ($data['news'] as $news) {
+            if(isset($news['title'])) {
+                $category = Category::query()->firstOrCreate([
+                    'name' => $news['title'],
+                    'slug' => Str::slug($news['title']),
+                ]);
+
+                News::query()->firstOrCreate([
+                    'title' => $news['title'],
+                    'text' => $news['description'],
+                    'isPrivate' => false,
+                    'image' => $news['enclosure::url'],
+                    'category_id' => $category->id,
+                ]);
+            }
+        }
+        //return redirect()->route('news.category.index');
+
        /* Parser::payload('application/json');
         $xml = Parser::xml('https:://news.yandex.ru/auto.rss');
         dump($xml);
@@ -73,37 +100,5 @@ class XMLParserService
         $xml = new SimpleXMLElement($xmlstr);
         if($xml===false)die('Error connect to RSS: '.$xmlstr);
         dump($xml);*/
-
-
-
-        $xml = XmlParser::load($link);
-        dump($xml);
-        $data = $xml->parse([
-        'title' => ['uses' => 'channel.title'],
-        'link' => ['uses' => 'channel.link'],
-        'description' => ['uses' => 'channel.description'],
-        'image' => ['uses' => 'channel.image.url'],
-        'news' => ['uses' => 'channel.item[guid,title,link,description,pubDate,enclosure::url,category]'],
-    ]);
-
-
-
-        foreach ($data['news'] as $news) {
-            if($news['category']) {
-                $category = Category::query()->firstOrCreate([
-                    'name' => $news['category'],
-                    'slug' => Str::slug($news['category']),
-                ]);
-
-                News::query()->firstOrCreate([
-                    'title' => $news['title'],
-                    'text' => $news['description'],
-                    'isPrivate' => false,
-                    'image' => $news['enclosure::url'],
-                    'category_id' => $category->id,
-                ]);
-            }
-        }
-        //return redirect()->route('news.category.index');
     }
 }
