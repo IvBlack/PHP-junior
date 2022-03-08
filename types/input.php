@@ -35,3 +35,10 @@ if(is_int($an_int)) {
 if(is_string($a_str2)) {
     echo "String is: $a_str2";
 }
+
+//if we wanna change variable type we can use settype():
+$foo = "5bar"; //string
+$bar = true; //bool
+
+settype($foo, "integer"); //$foo is int now
+settype($bar, "string"); //$bar is "1" now
