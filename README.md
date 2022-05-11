@@ -1,2 +1,2 @@
 # PHP-junior
-Works on php
+PHP basics from step to step.
